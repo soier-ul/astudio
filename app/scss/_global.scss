@@ -1,0 +1,350 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Averta Demo PE Cutted Demo', sans-serif;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.main {
+  flex-grow: 1;
+  padding-top: 129px;
+
+  @include max-w($md) {
+    padding-top: 94px;
+  }
+
+  @include max-w($xs) {
+    padding-top: 70px;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.container {
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 0 15px;
+
+  &--slider {
+    max-width: 1295px;
+  }
+}
+
+.logo {
+  display: inline-block;
+  outline: transparent;
+  border-radius: 6px;
+  height: 45px;
+  transition: box-shadow 0.3s, background-color 0.3s ease-in-out;
+
+  &__img {
+    width: 120px;
+    height: 45px;
+    padding: 10px 0;
+    object-fit: contain;
+    object-position: left;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 4px rgba(orange, 0.4);
+  }
+
+  &:hover {
+    background-color: rgba(#c1c1c1, 0.2);
+  }
+
+  &--footer {
+    margin-bottom: 10px;
+  }
+}
+
+.link-animation {
+  position: relative;
+  border-radius: 3px;
+  transition: box-shadow 0.3s, color 0.3s;
+  outline: transparent;
+
+  &:focus {
+    box-shadow: 0 0 0 3px rgba(orange, 0.3);
+  }
+
+  &:hover {
+    color: rgba(#000, 0.6);
+  }
+}
+
+.title {
+  font-family: 'Proxima Nova';
+  font-weight: 700;
+  font-size: 40px;
+  margin-bottom: 20px;
+
+  @include max-w($sm) {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+}
+
+.text {
+  line-height: 1.6;
+  color: $silver;
+  @include line-clamp(2);
+
+  @include max-w($sm) {
+    font-size: 15px;
+  }
+
+  p {
+    @include line-clamp(7);
+  }
+}
+
+.btn {
+  font-family: 'Proxima Nova';
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.065em;
+  padding: 20px 40px;
+  background-color: $blue;
+  color: #fff;
+  border-radius: 60px;
+  transition: background-color 0.4s, box-shadow 0.4s;
+  outline: transparent;
+
+  &:focus {
+    box-shadow: 0 0 0 4px rgba(orange, 0.6);
+  }
+
+  &:hover {
+    background-color: $blue-900;
+  }
+}
+
+.video {
+  max-width: 550px;
+  width: 100%;
+  height: 372px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 10px 20px 50px rgba(0, 0, 0, 0.15);
+  outline: transparent;
+  transition: box-shadow 0.3s ease-in-out;
+
+  @include max-w($lg) {
+    max-width: 100%;
+    height: 500px;
+    margin-bottom: 30px;
+  }
+
+  @include max-w($sm) {
+    height: 370px;
+  }
+
+  @include max-w($xs) {
+    height: 270px;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 3px rgba(orange, 0.6);
+  }
+
+  &:hover {
+    &::before {
+      transform: scale(1.2);
+      background-color: $blue-900;
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    background-image: url(../images/icons/icon-play.svg);
+    background-repeat: no-repeat;
+    background-position: 60% 50%;
+    background-size: 32px;
+    width: 75px;
+    height: 75px;
+    background-color: $blue;
+    border-radius: 50%;
+    z-index: 1;
+    transition: transform 0.4s ease-out, background-color 0.5s ease-out;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    background-color: $orange-100;
+    border-radius: 50%;
+    bottom: -60px;
+    right: -24px;
+    z-index: -1;
+
+    @include max-w($lg) {
+      right: 70px;
+    }
+  }
+}
+
+.social {
+  display: flex;
+
+  @include max-w($sm) {
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+
+  &__item {
+    margin-right: 16px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    outline: transparent;
+    width: 36px;
+    height: 36px;
+    border-radius: 3px;
+    border-radius: 50%;
+    display: block;
+    transition: box-shadow 0.3s ease-out;
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(orange, 0.6);
+    }
+
+    &:hover {
+      box-shadow: 5px 7px 31px 0px rgba(#000, 0.2);
+    }
+
+    svg {
+      width: 36px;
+      height: 36px;
+    }
+  }
+}
+
+.burger {
+  width: 50px;
+  height: 50px;
+  display: none;
+
+  @include max-w($md) {
+    display: block;
+  }
+
+  &__row {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 2px;
+    background-color: rgba(#000, 0.7);
+    margin: 0 auto;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: rgba(#000, 0.7);
+      left: 0;
+    }
+
+    &::before {
+      bottom: 7px;
+    }
+
+    &::after {
+      top: 7px;
+    }
+  }
+}
+
+//
+
+.swiper {
+  padding: 140px 0;
+
+  @include max-w($sm) {
+    padding: 70px 0 40px;
+  }
+}
+
+.swiper-slide {
+  display: flex;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 8px solid #ff007a;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+
+    @include max-w($sm) {
+      content: none;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    background-image: url(../images/decor/dots-silver.svg);
+    background-repeat: no-repeat;
+    top: -42px;
+    left: 230px;
+    width: 200px;
+    height: 150px;
+    z-index: -1;
+  }
+}
+
+.swiper-pagination {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+
+  .swiper-pagination-bullet {
+    position: static;
+    display: block;
+    width: 16px;
+    height: 16px;
+    opacity: 1;
+    background-color: #e7f0fc;
+    margin: 0 8px;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: $blue;
+  }
+}

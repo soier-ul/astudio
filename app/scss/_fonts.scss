@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'Averta Demo PE Cutted Demo';
+  font-weight: 400;
+  font-style: normal;
+  src:
+    url('../fonts/averta_demo_pe_cutted_demo_regular.woff2') format('woff2'),
+    url('../fonts/averta_demo_pe_cutted_demo_regular.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  font-weight: 700;
+  font-style: normal;
+  src:
+    url('../fonts/proxima_nova_bold.woff2') format('woff2'),
+    url('../fonts/proxima_nova_bold.woff') format('woff');
+  font-display: swap;
+}
